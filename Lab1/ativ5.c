@@ -88,4 +88,5 @@ int main() {
 
 	printf("--Thread principal terminou\n");
 	pthread_exit(NULL);
+	return 0;
 }
