@@ -9,23 +9,22 @@
 
 typedef struct {
 	int seed, len;
-	double result;
 } Arg_t;
 
 void* task(void *arg) {
 	int seed = ((Arg_t *) arg)->seed;
 	int len = ((Arg_t *) arg)->len;
-	double result = 0;
+	double *result = malloc(sizeof(*result));
+	*result = 0;
 
 	for (int i = seed + len; i > seed;  i--) {
 		int sinal = (i&1)*2-1;
 		double div = (double) (i*2 - 1) * sinal;
 
-		result += 4/div;
+		*result += 4/div;
 	}
 
-	((Arg_t *) arg)->result = result;
-	pthread_exit(NULL);
+	pthread_exit((void *) result);
 }
 
 int main (int argc, char **argv) {
@@ -35,6 +34,7 @@ int main (int argc, char **argv) {
 	int offset, len, resto;
 	pthread_t *tids;
 	Arg_t *args;
+	double *ret;
 
 	double tstart, tfinish, tinit, telapsed;
 
@@ -67,7 +67,6 @@ int main (int argc, char **argv) {
 		args[i].seed = offset;
 		offset += len;
 		args[i].len = len;
-		args[i].result = 0;
 
 		if (resto > 0) {
 			args[i].len += 1;
@@ -84,10 +83,11 @@ int main (int argc, char **argv) {
 
 	// Espera pthreads
 	for (int i = numThreads-1; i >= 0; i--) {
-		if (pthread_join(tids[i], NULL)) {
+		if (pthread_join(tids[i], (void **) &ret)) {
 			printf("--ERRO: pthread_join() \n"); exit(-1);
 		}
-		nearPi += args[i].result;
+		nearPi += *ret;
+		free(ret);
 	}
 
 	// Libera variáveis de concorrência
