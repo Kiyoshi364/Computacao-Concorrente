@@ -1,0 +1,222 @@
+\documentclass[12pt]{article}
+
+\usepackage[brazilian]{babel}
+
+\usepackage{verbatim}
+\newenvironment{code}{\verbatim}{\endverbatim}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=cyan,
+	filecolor=magenta,      
+	urlcolor=blue,
+}
+\urlstyle{same}
+
+\newcommand{\tb}{\textbf}
+\newcommand{\ti}{\textit}
+\newcommand{\tu}{\underline}
+
+\begin{document}
+\title{Trabalho de Implementação 1 - Computação Concorrente}
+\author{Daniel Kiyoshi Hashimoto Vouzella de Andrade}
+\date{}
+\maketitle
+
+\section{Descrição do problema}
+
+Uma forma de estruturar código de video games
+é por meio do ECS (Entity Component System).
+Nessa estrutura, são gerados vários sistemas,
+que cada um deles simula um comportamento do jogo
+podendo ou não depender de outros sistemas
+(alguns devem rodar depois de outros).
+
+Dessa forma, pode-se criar um grafo direcionado
+aciclico e rodar cada sistema na ordem topológica.
+Em vários casos, os sistemas têm poucas dependencias
+possibilitando percorer o grafo de uma forma
+concorrente e eficiente.
+
+O algoritmo sequencial para gerar
+uma ordem topológica para um grafo é simples
+\href{https://en.wikipedia.org/wiki/Topological_sorting}
+{Wikipedia Link}.
+
+\newpage
+\section{O Algoritmo Sequencial}
+
+\begin{enumerate}
+	\item Gerar uma ``Lista de Graus''.
+		Um vetor, de tamanho `número de vértices',
+		onde na posição $i$ tem quantos vértices do grafo são adjacentes
+		ao vértice $i$.
+	\item Cria ``Fila Ordenados''.
+	\item Adicionar os vértices iniciais (que tem grau igual a 0)
+		em uma ``Fila''.
+	\item Enquanto Fila não está vazia:
+	\begin{enumerate}
+		\item Tirar um vértice ``X'' da Fila.
+		\item Adicionar X na Fila Ordenados.
+		\item Executar código referente a X.
+		\item Para cada vértice ``Y'' que é adjacente a X
+			(ou seja, X aponta para Y):
+		\begin{enumerate}
+			\item Reduzir 1 na posição Y da Lista de Graus.
+			\item Se a posição Y == 0, Adicionar Y na Fila.
+		\end{enumerate}
+	\end{enumerate}
+	\item Retorna Fila Ordenados.
+\end{enumerate}
+
+\newpage
+\section{Projeto do Algoritmo Concorrente}
+
+Alterações e inclusões que vamos fazer uma versão concorrente:
+\begin{itemize}
+	\item Canais de Comunicação:
+
+		Vamos usar uma Bolsa de Tarefas, uma Lista de Retorno
+		e uma de Terminado.
+
+		A Bolsa de Tarefas vai ser um meio de comunicação da
+		\verb.main. para operários
+		enquanto a Lista de Retorno e de Terminados vão
+		ser um meio de comunicação do caminho contrário.
+
+		A Bolsa de Tarefas e de Terminados
+		vão ser de um tipo que vou chamar de \verb.mut_arr_t.:
+		\begin{code}
+		    typedef struct {
+		        int *arr;
+		        int len;
+
+		        int i;
+		        pthread_mutex_t lock;
+		     } mut_arr_t;
+		\end{code}
+
+		Os campos da struct \verb.arr. e \verb.len.
+		devem ser escritos somente em tempo de alocação.
+
+		\verb.i. vai ser uma referência ``pública''
+		para os trabalhadores, por isso precisa de um mutex.
+
+		\ti{
+			Nota: Os} \verb.i.\ti{s para a Bolsa de Tarefas e a
+			Lista de Terminados vão ser usados de formas diferentes.
+		}
+
+		A Lista de Retorno vai ser um simples vetor.
+		O resultado do vértice $i$ pode ser encontrado
+		em um de dois lugares: 
+		\begin{itemize}
+			\item na posição $i$, ou
+			\item na posição que $i$ está na Bolsa de Tarefas.
+		\end{itemize}
+
+	\item Alterações no Algoritmo da \verb.main.:
+
+		A função \verb.main. vai usar o Algoritmo,
+		mas vai ter que mandar trabalhos e esperar
+		os operários trabalharem.
+
+		O \ti{novo} Algoritmo vai ser divido em 3 partes:
+		\begin{itemize}
+			\item Inicialização:
+				Passo 1., 2. e 3. do Algoritmo Sequencial
+				e inicialização das threads Trabalhadoras.
+			\item Cria tarefas:
+				Passo 4.a e 4.b do Algoritmo Sequencial
+				e ``Escrever vértice X na Bolsa de Tarefas''.
+			\item Recebe resultados:
+				Para toda tarefa que foi finalizada mas não recebida,
+				marcar como recebida e fazer Passo 3.d.
+				\ti{
+					Junto com a tarefa finalizada,
+					será necessário saber qual foi o vértice finalizado.
+				}
+		\end{itemize}
+
+		O Algoritmo Concorrente fica com essa estrutura:
+		\begin{enumerate}
+			\item Inicialização.
+			\item Enquanto numRecebidos $<$ numVertices:
+			\begin{enumerate}
+				\item Cria Tarefas.
+				\item Recebe resultados.
+			\end{enumerate}
+		\end{enumerate}
+
+	\item Estrutura dos operários:
+
+		Cada operário vai ficar nesse loop até acabarem as tarefas:
+		\begin{enumerate}
+			\item Procurar e pegar uma tarefa na Bolsa de Tarefas.
+			\item Fazer o trabalho.
+			\item Preencher as Listas de Retorno e Terminados.
+		\end{enumerate}
+
+\end{itemize}
+
+\newpage
+\section{O Algoritmo Concorrente}
+
+Segue uma versão para main:
+
+\begin{enumerate}
+	\item Inicializa variáveis globais:
+		Bolsa de Tarefas, Lista de Retorno e Lista de Terminados
+	\item Gerar uma ``Lista de Graus''.
+		Um vetor, de tamanho `número de vértices',
+		onde na posição $i$ tem quantos vértices do grafo são adjacentes
+		ao vértice $i$.
+	\item Criar ``Fila Ordenados''.
+	\item Adicionar os vértices iniciais (que tem grau igual a 0)
+		na Bolsa de Tarefas.
+	\item Criar `número de threads' trabalhadores.
+	\item Enquanto Fila Ordenados não está cheia
+		(tamanho $<$ `número de vértices'):
+	\begin{enumerate}
+		\item Enquanto Lista de Terminados não está vazia:
+		\begin{enumerate}
+			\item Tirar um vértice ``X'' da Lista de Terminados.
+			\item Adicionar X na Fila Ordenados.
+			\item Para cada vértice ``Y'' que é adjacente a X
+				(ou seja, X aponta para Y):
+			\begin{enumerate}
+				\item Reduzir 1 na posição Y da Lista de Graus.
+				\item Se a posição Y == 0, Adicionar Y na Bolsa de Tarefas.
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+	\item Sinalizar que os trabalhos acabaram.
+	\item Retorna Fila Ordenados.
+\end{enumerate}
+
+Versão dos trabalhadores:
+
+\begin{enumerate}
+	\item Enquanto existem trabalhos a serem feitos:
+	\begin{enumerate}
+		\item Tentar pegar atomicamente o vértice ``X''
+			da Bolsa de Tarefas.
+		\item Se teve sucesso em pegar o vértice:
+		\begin{enumerate}
+			\item Realizar trabalho associado a X.
+			\item Escrever resultado em Lista de Retorno.
+			\item Adicionar atomicamente X a Lista de Terminados.
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Testes Realizados}
+%TODO
+
+\newpage
+\section{Avaliação de Desempenho}
+%TODO
+
+\end{document}
