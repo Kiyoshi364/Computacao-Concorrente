@@ -86,7 +86,7 @@ Alterações e inclusões que vamos fazer uma versão concorrente:
 		ser um meio de comunicação do caminho contrário.
 
 		A Bolsa de Tarefas e de Terminados
-		vão ser de um tipo que vou chamar de \verb.mut_arr_t.:
+		vão ser de um tipo que vou chamar de \verb.mut_arr.:
 		\begin{code}
 		    typedef struct {
 		        int *arr;
@@ -94,7 +94,7 @@ Alterações e inclusões que vamos fazer uma versão concorrente:
 
 		        int i;
 		        pthread_mutex_t lock;
-		     } mut_arr_t;
+		     } mut_arr;
 		\end{code}
 
 		Os campos da struct \verb.arr. e \verb.len.
