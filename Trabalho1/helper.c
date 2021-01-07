@@ -54,7 +54,5 @@ grafo* lerEntrada(int *V, int *A, uint **times) {
 }
 
 void doTask(int node, int t) {
-	DEBUG printf("Running node %d: Waiting %d seconds\n", node+1, t);
 	sleep(t);
-	DEBUG printf("Running node %d: Finished\n", node+1);
 }

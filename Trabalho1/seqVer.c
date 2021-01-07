@@ -71,7 +71,9 @@ int* topoSort(grafo *g, uint *times) {
 		// Já está na Fila Ordenados
 
 		// 4.c
+		DEBUG printf("Running node %d\n", node+1);
 		doTask( node, times[node] );
+		DEBUG printf("Finished node %d\n", node+1);
 
 		// Não precisa fazer Passo 4.b, pois a fila não esvazia
 
