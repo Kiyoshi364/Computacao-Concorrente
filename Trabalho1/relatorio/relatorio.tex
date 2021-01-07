@@ -179,16 +179,14 @@ Segue uma versão para main:
 	\item Enquanto Fila Ordenados não está cheia
 		(tamanho $<$ `número de vértices'):
 	\begin{enumerate}
-		\item Enquanto Lista de Terminados não está vazia:
+		\item Tentar tirar um vértice ``X'' da Lista de Terminados.
+		\item Se não conseguir, espere um pouco e volte para início do loop.
+		\item Adicionar X na Fila Ordenados.
+		\item Para cada vértice ``Y'' que é adjacente a X
+			(ou seja, X aponta para Y):
 		\begin{enumerate}
-			\item Tirar um vértice ``X'' da Lista de Terminados.
-			\item Adicionar X na Fila Ordenados.
-			\item Para cada vértice ``Y'' que é adjacente a X
-				(ou seja, X aponta para Y):
-			\begin{enumerate}
-				\item Reduzir 1 na posição Y da Lista de Graus.
-				\item Se a posição Y == 0, Adicionar Y na Bolsa de Tarefas.
-			\end{enumerate}
+			\item Reduzir 1 na posição Y da Lista de Graus.
+			\item Se a posição Y == 0, Adicionar Y na Bolsa de Tarefas.
 		\end{enumerate}
 	\end{enumerate}
 	\item Sinalizar que os trabalhos acabaram.
