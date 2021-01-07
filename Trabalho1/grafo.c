@@ -56,7 +56,7 @@ void printClist(clist *l) {
 	}
 
 	while ( now != l ) {
-		printf("%d%s", now->val,
+		printf("%d%s", now->val+1,
 				now->next==l ? "\n" : ", ");
 		now = now->next;
 	}
@@ -105,7 +105,7 @@ void addAresta(grafo *g, int de, int para) {
 void printGrafo(grafo *g) {
 	printf("V=%d, A=%d\n", g->V, g->A);
 	for (int i = 0; i < g->V; i++) {
-		printf("%d: ", i);
+		printf("%d: ", i+1);
 		printClist(g->adjs[i]);
 	}
 	putchar('\n');
