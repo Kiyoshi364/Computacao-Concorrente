@@ -14,7 +14,8 @@ typedef unsigned int uint;
 #define IS_SPACE(x)	( (x) == ' ' || (x) == '\n' )
 #define IS_NUM(x)	( '0' <= (x) && (x) <= '9' )
 
-#define DEBUG if (1)
+#define DEBUG if (0)
+#define DOTASK if (0)
 
 #include "grafo.c"
 #include "helper.c"
@@ -46,7 +47,7 @@ void* task(void *arg) {
 
 		// Passo 1.b.i
 		DEBUG printf("Worker %d: Running node %d\n", id, node+1);
-		doTask(node, times[node]);
+		DOTASK doTask(node, times[node]);
 		DEBUG printf("Worker %d: Finished node %d\n", id, node+1);
 
 		// Passo 1.b.ii

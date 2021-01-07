@@ -14,7 +14,8 @@ typedef unsigned int uint;
 #define IS_SPACE(x)	( (x) == ' ' || (x) == '\n' )
 #define IS_NUM(x)	( '0' <= (x) && (x) <= '9' )
 
-#define DEBUG if (1)
+#define DEBUG if (0)
+#define DOTASK if (0)
 
 #include "grafo.c"
 #include "helper.c"
@@ -72,7 +73,7 @@ int* topoSort(grafo *g, uint *times) {
 
 		// 4.c
 		DEBUG printf("Running node %d\n", node+1);
-		doTask( node, times[node] );
+		DOTASK doTask( node, times[node] );
 		DEBUG printf("Finished node %d\n", node+1);
 
 		// Não precisa fazer Passo 4.b, pois a fila não esvazia
