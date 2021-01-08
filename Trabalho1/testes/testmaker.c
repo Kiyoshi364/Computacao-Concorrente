@@ -38,7 +38,7 @@ int randomValidNode(grafo *g, int node) {
 grafo* randomGrafo(int V, int A) {
 	grafo *g = newGrafo(V);
 
-	int v = 1, a = 0;
+	int v = 0, a = 0;
 
 	for (; v < V && a < A; v++) {
 
@@ -92,10 +92,25 @@ void printGrafoFormatted(grafo *g, int time) {
 	}
 }
 
-int main() {
+int main(int argc, char **argv) {
 	int V = 100, A = V*3;
 	int seed = time(NULL);
-	int time = 0;
+	int time = 1;
+
+	switch (argc) {
+		default:
+		case 5:
+			time = atoll(argv[4]);
+		case 4:
+			seed = atoll(argv[3]);
+		case 3:
+			A = atoll(argv[2]);
+		case 2:
+			V = atoll(argv[1]);
+			A = argc == 2? V*3 : A;
+		case 1:
+			break;
+	}
 
 	srand(seed);
 
