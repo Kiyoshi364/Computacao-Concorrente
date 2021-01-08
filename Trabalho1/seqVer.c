@@ -1,26 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#ifdef _WIN32
-#include <Windows.h>
-#else
-#include <unistd.h>
-#endif
-
-typedef unsigned int uint;
-
-#define TAMBUFFER 100
-
-#define IS_SPACE(x)	( (x) == ' ' || (x) == '\n' )
-#define IS_NUM(x)	( '0' <= (x) && (x) <= '9' )
-
-#define DEBUG if (0)
-#define DOTASK if (0)
-
-#include "grafo.c"
-#include "helper.c"
-
-int* topoSort(grafo *g, uint *times) {
+int* topoSort(grafo *g) {
 	int graus[g->V];
 	int end = 0;
 
@@ -110,29 +88,4 @@ int* topoSort(grafo *g, uint *times) {
 	}
 
 	return queue;
-}
-
-int main(int argc, char **argv) {
-	int V, A;
-	uint *times;
-
-	// Ler entrada
-	grafo *graf = lerEntrada(&V, &A, &times);
-
-	// Organizar
-	int *indexes = topoSort(graf, times);
-
-	// Mostrar saída
-	printf("Resultado Final: ");
-	for (int i = 0; i < V; i++) {
-		// printf("node: %d, %ds\n", indexes[i]+1, times[ indexes[i] ]);
-		printf("%d%c", indexes[i]+1, i+1<V?' ':'\n');
-	}
-
-	free(indexes);
-
-	free(times);
-	freeGrafo(graf);
-
-	return 0;
 }

@@ -1,37 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#ifdef _WIN32
-#include <Windows.h>
-#else
-#include <unistd.h>
-#endif
-
-typedef unsigned int uint;
-
-#define TAMBUFFER 100
-
-#define IS_SPACE(x)	( (x) == ' ' || (x) == '\n' )
-#define IS_NUM(x)	( '0' <= (x) && (x) <= '9' )
-
-#define DEBUG if (0)
-#define DOTASK if (0)
-
-#include "grafo.c"
-#include "helper.c"
-
-#include <pthread.h>
-
-#include "mut_arr.c"
-
-// Variáveis Globais
-mut_arr *jobPool;
-int jobCount;
-mut_arr *done;
-int *retCodes;
-
-uint *times;
-
 void* task(void *arg) {
 	int id = *( (int *) arg );
 
@@ -164,7 +130,7 @@ int* topoSortConc(grafo *g, int nthreads) {
 			now = now->next;
 		}
 
-		DEBUG {} else {
+		DEBUG {
 			printf("End of Loop: end=%d, jobCount=%d, done=%d\n", end, jobCount, done->i);
 			printf("jobPool: ");
 			for (int i = 0; i < g->V; i++) {
@@ -199,34 +165,4 @@ int* topoSortConc(grafo *g, int nthreads) {
 	}
 
 	return queue;
-}
-
-int main(int argc, char **argv) {
-	int V, A;
-	int nthreads = 1;
-	if ( argc < 1 ) {
-		puts("Por falta de argumentos será usada uma thread");
-	} else {
-		nthreads = atoll(argv[1]);
-	}
-
-	// Ler entrada
-	grafo *graf = lerEntrada(&V, &A, &times);
-
-	// Organizar
-	int *indexes = topoSortConc(graf, nthreads);
-
-	// Mostrar saída
-	printf("Resultado Final: ");
-	for (int i = 0; i < V; i++) {
-		// printf("node: %d, %ds\n", indexes[i]+1, times[ indexes[i] ]);
-		printf("%d%c", indexes[i]+1, i+1<V?' ':'\n');
-	}
-
-	free(indexes);
-
-	free(times);
-	freeGrafo(graf);
-
-	return 0;
 }
