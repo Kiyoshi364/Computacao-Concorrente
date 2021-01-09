@@ -34,7 +34,7 @@ podendo ou não depender de outros sistemas
 (alguns devem rodar depois de outros).
 
 Dessa forma, pode-se criar um grafo direcionado
-aciclico e rodar cada sistema na ordem topológica.
+aciclico (DAG) e rodar cada sistema na ordem topológica.
 Em vários casos, os sistemas têm poucas dependencias
 possibilitando percorer o grafo de uma forma
 concorrente e eficiente.
@@ -211,10 +211,229 @@ Versão dos trabalhadores:
 
 \newpage
 \section{Testes Realizados}
-%TODO
+
+Como a versão sequencial e a versão concorrente são diferentes,
+ou seja, rodar a versão concorrente com uma thread é diferente
+de rodar a versão sequencial, foram feitos duas funções
+e quando tem ``0 threads'' a main escolhe a versão sequencial.
+
+O arquivo de entrada possui o seguinte formato:
+\begin{code}
+    NVertices NArestas
+    T # Vértices que vértice 0 aponta separados por espaço
+    T # Vértices que vértice 1 aponta separados por espaço
+    ...
+    T # Vértices que vértice NVertices-1 aponta separados por espaço
+\end{code}
+\verb.T. é o tempo em segundos que o trabalho relacionado ao vértice leva
+(argumento para a função sleep).
+
+\ti{
+	(Nota:
+	Para todos os testes, esse parâmetro será ignorado
+	porque a função sleep usada
+	não suporta floats nem 0 segundos.
+	Esperar 1 segundo 100000 vezes ``a toa'' é um desperdício de tempo
+	e também isso daria uma vantagem injusta para as versões concorrentes.)
+}
+
+Foi criado um programa para fazer os testes,
+ele recebe um número de vértices, arestas, uma seed e um tempo
+(se não for oferecido existe um valor padrão).
+
+Existem várias estratégias para formar um DAG,
+mas a usada foi uma iterativa,
+na qual em cada iteração,
+cria-se um vértice que aponta para $X$ já criados.
+
+Foram usados dois tipos de testes
+(baseados em sua finalidade).
+
+Os testes de corretude:
+\begin{itemize}
+	\item in1
+	\item in2
+	\item in3
+	\item auto1
+\end{itemize}
+Os testes de desempenho:
+\begin{itemize}
+	\item autoe1-3
+	\item autoe1-4
+	\item autoe1-5
+	\item autoe2-3
+	\item autoe2-4
+	\item autoe2-5
+	\item autoe3-3
+	\item autoe3-4
+	\item autoe3-5
+	\item autoe5-3
+	\item autoe5-4
+	\item autoe5-5
+	\item autoe6-3
+	\item autoe6-4
+	\item autoe6-5
+	\item autoe7-3
+	\item autoe7-4
+	\item autoe7-5
+\end{itemize}
+Nomeclatura dos arquivos de teste:
+\begin{itemize}
+	\item \verb.in[numero].
+
+		Arquivos gerados a mão.
+	\item \verb.auto[numero].
+
+		Arquivos gerados pelo programa auxiliar
+		para testar o programa auxiliar.
+	\item \verb.autoe[exp]-[x].
+
+		Arquivos gerados pelo programa auxiliar
+		para testes de desempenho.
+		Número de Vértices: $10^{exp}$ \\
+		Número de Arestas: $x \cdot 10^{exp}$
+\end{itemize}
+
+Foram feitos dois testes,
+um com sleep desligado (sem Trabalho),
+outro com o sleep ligado (com Trabalho).
+Como o sleep minímo é de 1 segundo,
+tive que usar grafos pequenos.
+
+Para cada escolha de número de threads
+(0, 1, 2, 4)
+foi realizado o mesmo teste $5$ vezes
+e escolhido o melhor tempo, em segundos.
 
 \newpage
 \section{Avaliação de Desempenho}
-%TODO
+
+\begin{center}
+	\tb{Tabela de Tempos sem Trabalho}
+\begin{tabular}{|c|c||c|c|c|c|}
+	\hline
+	V & A & 0 & 1 & 2 & 4 \\
+	\hline
+	      & 3 000 & 0.000053 & 0.000379* & 0.000405 & 0.000593 \\
+	1 000 & 4 000 & 0.000084 & 0.000359 & 0.000398 & 0.000605 \\
+	      & 5 000 & 0.000071 & 0.000364 & 0.000437 & 0.000637 \\
+	\hline
+	       & 30 000 & 0.000663 & 0.001832 & 0.001982 & 0.002335 \\
+	10 000 & 40 000 & 0.000856 & 0.001674 & 0.002011 & 0.002213 \\
+	       & 50 000 & 0.001116 & 0.001727 & 0.002007 & 0.002509 \\
+	\hline
+	        & 300 000 & 0.012474 & 0.018909 & 0.025661 & 0.027801 \\
+	100 000 & 400 000 & 0.016613 & 0.021104 & 0.027023 & 0.029585 \\
+	        & 500 000 & 0.018410 & 0.024079 & 0.029371 & 0.031749 \\
+	\hline
+	          & 3 000 000 & 0.259164 & 0.295392 & 0.364724 & 0.391712 \\
+	1 000 000 & 4 000 000 & 0.278765 & 0.319985 & 0.407232 & 0.428438 \\
+	          & 5 000 000 & 0.304980 & 0.353866 & 0.437699 & 0.465561 \\
+	\hline
+	           & 30 000 000 &          &          &          &          \\
+	10 000 000 & 40 000 000 & segfault** & segfault** & segfault** & segfault** \\
+	           & 50 000 000 &          &          &          &          \\
+	\hline
+\end{tabular}\end{center}
+
+* Na primeira vez que rodei a bateria o melhor tempo foi 0.000507,
+ele estava muito grande e rodei de novo substituindo o resultado.
+
+** Não sei porque deu segmentation fault em todos os casos com
+10 000 000 vértices.
+A primeira ideia foi porque usava muita memória,
+mas o programa auxiliar que gerava os testes
+usa a mesma estrutura de dados para guardar o grafo.
+Isso não exclui a possibilidade da falta de memória ser a causa
+(o algoritmo tem algum overhead de memória),
+mas também podem ser ter outros motivos
+(algum erro de implementação, por exemplo).
+
+\newpage
+\begin{center}
+	\tb{Tabela de Acelerações sem Trabalho}
+\begin{tabular}{|c|c||c|c|c|}
+	\hline
+	V & A & 0/1 & 0/2 & 0/4 \\
+	\hline
+	      & 3 000 & 0.139841 & 0.130864 & 0.089376 \\
+	1 000 & 4 000 & 0.233983 & 0.211055 & 0.131868 \\
+	      & 5 000 & 0.195054 & 0.162471 & 0.111459 \\
+	\hline
+	       & 30 000 & 0.361899 & 0.334510 & 0.283940 \\
+	10 000 & 40 000 & 0.511350 & 0.425658 & 0.386805 \\
+	       & 50 000 & 0.646207 & 0.556053 & 0.444798 \\
+	\hline
+	        & 300 000 & 0.659685 & 0.486107 & 0.448688 \\
+	100 000 & 400 000 & 0.787196 & 0.565625 & 0.523260 \\
+	        & 500 000 & 0.764566 & 0.626808 & 0.579860 \\
+	\hline
+	          & 3 000 000 & 0.877356 & 0.710575 & 0.661618 \\
+	1 000 000 & 4 000 000 & 0.871181 & 0.684536 & 0.650654 \\
+	          & 5 000 000 & 0.861851 & 0.696780 & 0.669388 \\
+	\hline
+\end{tabular}\end{center}
+
+\begin{center}
+	\tb{Tabela de Tempos com Trabalho}
+\begin{tabular}{|c|c||c|c|c|c|}
+	\hline
+	V & A & 0 & 1 & 2 & 4 \\
+	\hline
+	   & 30 & 10.003371 & 10.003172 & 6.001523 & 5.003268 \\
+	10 & 40 & 10.003835 & 10.002175 & 6.003037 & 5.002508 \\
+	   & 50 & 10.003125 & 10.003392 & 5.002935 & 5.006549 \\
+	\hline
+	    & 300 & 100.054249 & 100.055806 & 51.034063 & 29.033188 \\
+	100 & 400 & 100.052372 & 100.046282 & 51.023950 & 28.015765 \\
+	    & 500 & 100.049649 & 100.054417 & 51.025788 & 29.224330 \\
+	\hline
+\end{tabular}\end{center}
+
+\begin{center}
+	\tb{Tabela de Acelerações com Trabalho}
+\begin{tabular}{|c|c||c|c|c|}
+	\hline
+	V & A & 0/1 & 0/2 & 0/4 \\
+	\hline
+	   & 30 & 1.000019 & 1.666805 & 1.999367 \\
+	10 & 40 & 1.000165 & 1.666462 & 1.999763 \\
+	   & 50 & 0.999973 & 1.999451 & 1.998008 \\
+	\hline
+	    & 300 & 0.999984 & 1.960538 & 3.446202 \\
+	100 & 400 & 0.995914 & 1.960890 & 3.571288 \\
+	    & 500 & 0.999952 & 1.960766 & 3.423505 \\
+	\hline
+\end{tabular}\end{center}
+
+\newpage
+\section{Conclusão}
+
+Os resultados do ``sem Trabalho''
+aparentemente não foram muito bons.
+A ideia é porque não ter nenhum trabalho
+leva a todas as threads ficarem ociosas
+e só é contado o overhead da programação concorrente
+(perda com sincronização e outros).
+Entretanto, com o aumento do tamanho dos grafos
+a aceleração foi aumentando,
+dizendo que realmente existe um ponto em que
+esse troca vai valer a pena.
+
+Já os do ``com Trabalho'' seguiram
+mais ou menos o esperado:
+com mais threads,
+consegue executar mais vértices,
+e assim percorrer o grafo mais rapidamente,
+mas com threads de mais,
+falta trabalho e threads começam a ficar ociosas.
+
+Provavelmente esse não foi o melhor jeito de
+avaliar o desempenho desse tipo de programa.
+Mas não tive outra ideia.
+Um dos motivos são os vários fatores que
+influenciam no desempenho.
+Alguns exemplos são a estrutura do grafo
+e complexidade das tarefas.
 
 \end{document}
