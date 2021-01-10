@@ -1,0 +1,34 @@
+Respostas para o Lab 4
+
+Atividade 1
+
+2. Existem vários casos esperados, e todas as execuções cairam em um deles.
+Sim, o "BYE" sempre foi impresso após os dois "HELLO"s.
+
+3. Só vai ter uma thread A, então x só vai chegar até 1. Mesmo que thread B
+seja executada no "tempo certo", vai ficar bloqueada.
+Após esses eventos acontecerem (em qualquer ordem),
+B vai estar bloqueada (esperando um sinal),
+a única A vai ter terminado e
+a main vai estar esperando B terminar: deadlock.
+Não, vai entrar em deadlock.
+
+5. Alterações necessárias:
+	- Aumentar o tamanho do define NTHREADS para 4
+	- Criar mais uma thread B e acertar os indexes de threads
+	- Na função A, trocar de pthread_cond_signal para pthread_cond_broadcast
+
+Atividade 2
+
+2. Existem vários casos esperados, e todas as execuções cairam em um deles.
+Sim, os dois "BYE" sempre foram impressos após o "HELLO".
+
+Atividade 3
+
+2. Sim.
+
+3. Não. Quando um sinal é enviado não há garantias que a thread que recebe o
+sinal vai ser a próxima a executar, então existe a chance de outra thread
+incrementar x e quando a thread B executar x não ser mais um múltiplo de 10.
+
+4. Não, a thread B printou x = número não multiplo de 10 algumas vezes.
