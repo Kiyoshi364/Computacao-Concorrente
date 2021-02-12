@@ -72,40 +72,31 @@ void* task( void *arg ) {
     return NULL;
 }
 
-void initVec( int *v, int tam ) {
+void readVec( int *v, int tam ) {
     for (int i = 0; i < tam; i++) {
-        v[i] = i;
-    }
-
-    for (int i = 0; i < tam; i++) {
-        for (int j = 0; j < tam-1; j++) {
-            if ( rand() & 1 ) {
-                int temp = v[j];
-                v[j] = v[j+1];
-                v[j+1] = temp;
-            }
-        }
+        scanf("%d", v+i);
     }
 }
 
 int main(int argc, char **argv) {
-	long long int numThreads, tamVec;
+	int numThreads, tamVec;
 	int tamBuffer;
 
 	double tstart, tfinish, telapsed;
 
 	// Leitura de argumentos
-	if (argc < 3) {
-		printf("usage: %s <n elementos> <n threads> <tamBuffer>\n", argv[0]);
+	if (argc < 2) {
+		printf("usage: %s <n threads>\n", argv[0]);
+        return 0;
 	} else {
-		tamVec = atoll(argv[1]);
-		numThreads = atoll(argv[2]);
-		// tamBuffer = atoll(argv[3]);
+		numThreads = atoll(argv[1]);
 	}
+    scanf("%d", &tamVec);
+
     tamBuffer = tamVec;
 
     int vec[tamVec];
-    initVec(vec, tamVec);
+    readVec(vec, tamVec);
 
 	pthread_t *tids = malloc(sizeof(*tids)*numThreads);
 	Buffer_t *buffer = newBuffer(tamBuffer, numThreads);
