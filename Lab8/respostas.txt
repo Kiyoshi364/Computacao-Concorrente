@@ -1,0 +1,12 @@
+1)
+    a) Os valores iniciais devem ser:
+    em_e = 1
+    em_l = 1
+    leit = 1
+    escr = 1
+
+    b) Sim, retira leit e troca nos leitores
+    sem_wait(&leit) e sem_post(&leit) por
+    sem_wait(&em_l) e sem_post(&em_l).
+
+    e) .
