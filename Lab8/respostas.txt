@@ -9,4 +9,4 @@
     sem_wait(&leit) e sem_post(&leit) por
     sem_wait(&em_l) e sem_post(&em_l).
 
-    e) .
+    e) Não usa locks recursivos, não há 2 locks sem um unlock entre eles.
