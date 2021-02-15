@@ -1,0 +1,236 @@
+Consumidor(1): querendo pegar
+Consumidor(1): bloqueado
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): notificado
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 1: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 1: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Consumidor(2): querendo pegar
+Consumidor(2): bloqueado
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): notificado
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
+Produtor(2): querendo inserir
+Produtor(2) na posição 0: inseriu valor: 2
+Consumidor(1): querendo pegar
+Consumidor(1) na posição 0: pegou valor: 2
+Produtor(1): querendo inserir
+Produtor(1) na posição 0: inseriu valor: 1
+Consumidor(2): querendo pegar
+Consumidor(2) na posição 0: pegou valor: 1
