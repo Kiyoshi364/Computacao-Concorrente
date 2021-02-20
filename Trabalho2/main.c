@@ -60,10 +60,14 @@ void* task( void *arg ) {
         vec[j] = temp;
 
         if ( 0 < j ) {
-            bufferWrite(buf, vec, j);
+            if ( bufferWrite(buf, vec, j) < 0 ) {
+                return (void*) -1;
+            }
         }
         if ( i < tam ) {
-            bufferWrite(buf, vec+i, tam-i);
+            if ( bufferWrite(buf, vec+i, tam-i) < 0 ) {
+                return (void*) -1;
+            }
         }
         LOG puts("Fim trabalho");
     }
@@ -122,9 +126,13 @@ int main(int argc, char **argv) {
 
 	// Espera pthreads
 	for (int i = 0; i < numThreads; i++) {
-		if (pthread_join(tids[i], NULL)) {
+        void *err;
+		if (pthread_join(tids[i], &err)) {
 			printf("--ERRO: pthread_join() \n"); exit(-1);
 		}
+        if ( err == (void*) -1 ) {
+            printf("Erro: Buffer muito pequeno\n");
+        }
 	}
 
 	GET_TIME(tfinish);
