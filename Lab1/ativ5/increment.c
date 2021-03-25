@@ -8,8 +8,8 @@
 #include <pthread.h>
 
 // Pode alterar os defines
-#define NTHREADS	2		// total de threads a serem criadas
-#define VLEN		15		// tamanho total do vetor de int
+#define NTHREADS	2       // total de threads a serem criadas
+#define VLEN		100000  // tamanho total do vetor de int
 
 // cria a estrutura de dados para armazenar os argumentos da thread
 typedef struct {
@@ -41,11 +41,18 @@ int main() {
 	t_Args *arg;						// receberá os argumentos para a thread
 	int vec[VLEN];						// vetor que vai ser incrementado
 	int i, offset, len, resto;			// variaveis auxiliares
+    int qntErros = 0;
 
-	printf("Vetor antes do incremento:\n");
-	for(i = 0; i < VLEN; i++) {
-		vec[i] = i;
-		printf("%d%c", vec[i], i+1>=VLEN?'\n':' ');
+    if (VLEN < 20) {
+		printf("Vetor antes do incremento:\n");
+		for(i = 0; i < VLEN; i++) {
+			vec[i] = i;
+			printf("%d%c", vec[i], i+1>=VLEN?'\n':' ');
+		}
+	} else {
+		for(i = 0; i < VLEN; i++) {
+			vec[i] = i;
+		}
 	}
 
 	// Divide os espaços
@@ -81,9 +88,20 @@ int main() {
 		} 
 	}
 
-	printf("Vetor depois do incremento:\n");
+	if (VLEN < 20) {
+		printf("Vetor depois do incremento:\n");
+		for(i = 0; i < VLEN; i++) {
+			printf("%d%c", vec[i], i+1>=VLEN?'\n':' ');
+		}
+	}
 	for(i = 0; i < VLEN; i++) {
-		printf("%d%c", vec[i], i+1>=VLEN?'\n':' ');
+		if ( vec[i] != i+1 ) {
+			printf("Na posição %d era esperado %d, foi encontrado %d\n", i, i+1, vec[i]);
+			qntErros += 1;
+        }
+	}
+	if (qntErros == 0) {
+		printf("Ok\n");
 	}
 
 	printf("--Thread principal terminou\n");
