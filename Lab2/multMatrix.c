@@ -20,6 +20,17 @@ typedef struct {
 	int start, len, linha;
 } Arg_t;
 
+void mult(int start, int len, int linha) {
+	for (int i = 0; i < len; i++) {
+		int x = (start + i) % linha;
+		int	y = (start + i) / linha;
+
+		for (int k = 0; k < linha; k++) {
+			C[start+i] += A[INDEX(k, y, linha)] * B[INDEX(x, k, linha)];
+		}
+	}
+}
+
 void* task(void *arg) {
 	int start = ((Arg_t *) arg)->start;
 	int len = ((Arg_t *) arg)->len;
@@ -46,13 +57,16 @@ int main(int argc, char **argv) {
 
 	double tstart, tfinish, tinit, telapsed, tclean;
 
+	if (argc < 3) {
+		printf("Entrada esperada: %s <nthreads> <dimensão>\n", *argv);
+        return 0;
+	} else {
+		numThreads = atol(argv[1]);
+		linhas = atol(argv[2]);
+		colunas = atol(argv[2]);
+	}
+
 	GET_TIME(tstart);
-
-	printf("Número de threads: ");
-	scanf("%d", &numThreads);
-
-	printf("Linhas e colunas: ");
-	scanf("%d %d", &linhas, &colunas);
 
 	// Alloca espaço para matrizes
 	A = malloc(sizeof(*A)*linhas*colunas);
@@ -72,44 +86,52 @@ int main(int argc, char **argv) {
 
 	GET_TIME(tstart);
 
-	// Inicializa variáveis de concorrência
-	tids = malloc(sizeof(*tids)*numThreads);
+	if (numThreads < 2) {
+		// Versão sequencial
+		mult(0, linhas*colunas, colunas);
+	} else {
+		// Inicializa variáveis de concorrência
+		tids = malloc(sizeof(*tids)*numThreads);
 
-	offset = 0;
-	len = (linhas / numThreads) * colunas;
-	resto = linhas % numThreads;
+		offset = 0;
+		len = (linhas / numThreads) * colunas;
+		resto = linhas % numThreads;
 
-	args = malloc(sizeof(*args)*numThreads);
+		args = malloc(sizeof(*args)*numThreads);
 
-	// Chamar pthreads
-	for (int i = 0; i < numThreads; i++) {
-		args[i].start = offset;
-		offset += len;
-		args[i].len = len;
-		args[i].linha = colunas;
+		// Chamar pthreads
+		for (int i = 0; i < numThreads; i++) {
+			args[i].start = offset;
+			offset += len;
+			args[i].len = len;
+			args[i].linha = colunas;
 
-		if (resto > 0) {
-			args[i].len += colunas;
-			offset += colunas;
-			resto -= 1;
+			if (resto > 0) {
+				args[i].len += colunas;
+				offset += colunas;
+				resto -= 1;
+			}
+
+			if (DEBUG)
+				printf("--Cria a thread %d (start = %d, len = %d)\n", i, args[i].start, args[i].len);
+			if (pthread_create(tids + i, NULL, task, (void*) (args + i))) {
+				printf("--ERRO: pthread_create()\n"); exit(-1);
+			}
 		}
 
-		if (DEBUG)
-			printf("--Cria a thread %d (start = %d, len = %d)\n", i, args[i].start, args[i].len);
-		if (pthread_create(tids + i, NULL, task, (void*) (args + i))) {
-			printf("--ERRO: pthread_create()\n"); exit(-1);
+		// Espera pthreads
+		for (int i = 0; i < numThreads; i++) {
+			if (pthread_join(tids[i], NULL)) {
+				printf("--ERRO: pthread_join() \n"); exit(-1);
+			}
 		}
+
+		// Libera variáveis de concorrência
+		free(args);
+
+		free(tids);
 	}
 
-	// Espera pthreads
-	for (int i = 0; i < numThreads; i++) {
-		if (pthread_join(tids[i], NULL)) {
-			printf("--ERRO: pthread_join() \n"); exit(-1);
-		}
-	}
-
-	// Libera variáveis de concorrência
-	free(args);
 
 	GET_TIME(tfinish);
 
@@ -133,7 +155,7 @@ int main(int argc, char **argv) {
 
 	tclean = tfinish - tstart;
 
-	printf("\n\ntime init:\t %lf \n", tinit);
+	printf("time init:\t %lf \n", tinit);
 	printf("time elapsed:\t %lf \n", telapsed);
 	printf("time clean up:\t %lf \n", tclean);
 	printf("time total:\t %lf \n", tinit + telapsed + tclean);

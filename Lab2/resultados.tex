@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+
+\usepackage[brazilian]{babel}
+
+\begin{document}
+
+\section*{Resultados}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Tempos em Segundos} \\
+        \hline
+        Dimensão / Threads & 1 & 2 & 4 \\
+        \hline
+         500 &  0.524514 &  0.291099 &  0.265471 \\
+        1000 &  5.232618 &  3.065325 &  2.927719 \\
+        2000 & 51.285087 & 31.529268 & 28.964172 \\
+        \hline
+    \end{tabular}
+    
+    \ \\[3ex]
+    
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{Acelerações} \\
+        \hline
+        Dimensão / Threads & 1/2 & 1/4 \\
+        \hline
+         500 & 1.801840 & 1.975786 \\
+        1000 & 1.707035 & 1.787267 \\
+        2000 & 1.626586 & 1.770638 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\section*{Conclusões}
+
+\ 
+
+Os tempos são o esperado, mas as acelerações não.
+
+As acelerações diminuem com o aumento da dimensão;
+isso é estranho porque,
+a menos que tenha algo incomum relacionado à arquitetura do computador
+(menos cores que threads, problemas de cache, ...),
+as acelerações deveriam ser crescentes.
+Entretanto, elas permanecem maior que 1,
+indicando que existem algum ganho de performance.
+
+\end{document}

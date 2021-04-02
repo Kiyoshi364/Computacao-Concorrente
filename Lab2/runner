@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# usage: ./runner <nthreads> <dimensão>
+
+./a.out $1 $2
+echo
+./a.out $1 $2
+echo
+./a.out $1 $2
+echo
+./a.out $1 $2
+echo
+./a.out $1 $2
+echo
