@@ -43,6 +43,7 @@ int main (int argc, char **argv) {
 	// Leitura de argumentos
 	if (argc < 3) {
 		printf("usage: %s <n elementos> <n threads>\n", argv[0]);
+		return 0;
 	} else {
 		elem = atoll(argv[1]);
 		numThreads = atoll(argv[2]);
@@ -99,7 +100,7 @@ int main (int argc, char **argv) {
 	printf("Nosso PI:\t%.15lf\n", nearPi);
 	printf("Maths PI:\t%.15lf\n", M_PI);
 
-	printf("\n\ntime init:\t %lf \n", tinit);
+	printf("\ntime init:\t %lf \n", tinit);
 	printf("time elapsed:\t %lf \n", telapsed);
 	printf("time total:\t %lf \n", tinit + telapsed);
 

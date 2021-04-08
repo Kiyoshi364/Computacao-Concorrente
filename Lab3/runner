@@ -1,0 +1,36 @@
+#! /bin/bash
+
+# usage: ./runner <nthreads> <dimensão>
+# compile com gcc calculaPi.c -lpthread
+# compile com gcc calculaPiSeq.c -o seq.out
+
+if [ $1 -eq 1 ]; then
+    echo Sequencial:
+    echo '-------------------'
+    ./seq.out $2
+    echo '-------------------'
+    ./seq.out $2
+    echo '-------------------'
+    ./seq.out $2
+    echo '-------------------'
+    ./seq.out $2
+    echo '-------------------'
+    ./seq.out $2
+    echo '-------------------'
+
+else
+    
+    echo Concorrente "<"$1">":
+    echo '-------------------'
+    ./a.out $2 $1
+    echo '-------------------'
+    ./a.out $2 $1
+    echo '-------------------'
+    ./a.out $2 $1
+    echo '-------------------'
+    ./a.out $2 $1
+    echo '-------------------'
+    ./a.out $2 $1
+    echo '-------------------'
+
+fi

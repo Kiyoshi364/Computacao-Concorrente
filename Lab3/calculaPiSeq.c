@@ -37,17 +37,12 @@ int main (int argc, char **argv) {
 	GET_TIME(tfinish);
 	telapsed = tfinish - tstart;
 
-	GET_TIME(tstart);
-	GET_TIME(tfinish);
-	tclean = tfinish - tstart;
-
 	printf("Nosso PI:\t%.15lf\n", nearPi);
 	printf("Maths PI:\t%.15lf\n", M_PI);
 
-	printf("\n\ntime init:\t %lf \n", tinit);
+	printf("\ntime init:\t %lf \n", tinit);
 	printf("time elapsed:\t %lf \n", telapsed);
-	printf("time clean up:\t %lf \n", tclean);
-	printf("time total:\t %lf \n", tinit + telapsed + tclean);
+	printf("time total:\t %lf \n", tinit + telapsed);
 
 	return 0;
 }

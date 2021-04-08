@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+
+\usepackage[brazilian]{babel}
+
+\begin{document}
+
+\section*{Resultados}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Tempos em Segundos} \\
+        \hline
+        Dimensão / Threads & 1 & 2 & 4 \\
+        \hline
+              100 & 0.000014 & 0.000834 & 0.001048 \\
+            10000 & 0.001048 & 0.000874 & 0.000971 \\
+          1000000 & 0.008920 & 0.005456 & 0.003610 \\
+        100000000 & 0.895225 & 0.460198 & 0.267990 \\
+        \hline
+    \end{tabular}
+    
+    \ \\[3ex]
+    
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{Acelerações} \\
+        \hline
+        Dimensão / Threads & 1/2 & 1/4 \\
+        \hline
+              100 & 0.016786 & 0.013358 \\
+            10000 & 1.199084 & 1.079299 \\
+          1000000 & 1.634897 & 2.470914 \\
+        100000000 & 1.945303 & 3.340516 \\
+        \hline
+    \end{tabular}
+    
+    \ \\[3ex]
+    
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Valores de PI} \\
+        \hline
+        Dimensão / Threads & 1 & 2 & 4 \\
+        \hline
+              100 & 3.131592903558553 & 3.131592903558553 & 3.131592903558553 \\
+            10000 & 3.141492653590043 & 3.141492653590043 & 3.141492653590044 \\
+          1000000 & 3.141591653589793 & 3.141591653589793 & 3.141591653589793 \\
+        100000000 & 3.141592643589793 & 3.141592643589793 & 3.141592643589793 \\
+        \hline
+    \end{tabular}
+
+    \ \\[3ex]
+    
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Erros de PI} \\
+        \multicolumn{4}{|c|}{(Todos os valores são menores que \texttt{M\_PI})} \\
+        \hline
+        Dimensão / Threads & 1 & 2 & 4 \\
+        \hline
+              100 & 0.009999750031240 & 0.009999750031240 & 0.009999750031240 \\
+            10000 & 0.000099999999750 & 0.000099999999750 & 0.000099999999749 \\
+          1000000 & 0.000001000000000 & 0.000001000000000 & 0.000001000000000 \\
+        100000000 & 0.000000010000000 & 0.000000010000000 & 0.000000010000000 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\end{document}
