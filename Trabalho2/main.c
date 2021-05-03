@@ -1,151 +1,166 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <unistd.h>
 
-#include "../timer.h"
+#include "lock.h"
 
-#define THREADS 2
-#define TAMBUFFER 100
+#define NTHREADS   5
 
-#define LOG                 if ( 0 )
-#define PRINT_ANTES         if ( 0 )
-#define PRINT_DEPOIS        if ( 0 )
+#define DEBUG       if (1)
 
 typedef struct {
-    int *vec;
-    int tam;
-} Arg_t;
+    int temperatura;
+    int id;
+    int timestamp;
+} temperatura_t;
 
-#include "buffer.c"
+temperatura_t temperaturas[60];
+int pos = 0;
+lock_t *lock;
 
-void* task( void *arg ) {
-    Buffer_t *buf = (Buffer_t *) arg;
-    Arg_t tempVec;
-
-    LOG puts("Nova thread");
-    while ( 1 ) {
-        bufferRead(buf, &tempVec);
-
-        if ( tempVec.vec == NULL ) {
-            break;
-        } else if ( tempVec.tam <= 1 ) {
-            LOG puts("Trabalho vazio");
-            continue;
-        }
-        LOG puts("Novo trabalho");
-
-        int *vec = tempVec.vec;
-        int tam = tempVec.tam;
-        int i = 1, j = tam-1;
-
-        // Ordena
-        while ( i < j ) {
-            while ( vec[i] < vec[0] && i < tam ) {
-                i += 1;
-            }
-
-            while ( vec[0] < vec[j] && j > 0 ) {
-                j -= 1;
-            }
-
-            if ( i < j ) {
-                int temp = vec[i];
-                vec[i] = vec[j];
-                vec[j] = temp;
-            }
-        }
-
-        int temp = vec[0];
-        vec[0] = vec[j];
-        vec[j] = temp;
-
-        if ( 0 < j ) {
-            if ( bufferWrite(buf, vec, j) < 0 ) {
-                return (void*) -1;
-            }
-        }
-        if ( i < tam ) {
-            if ( bufferWrite(buf, vec+i, tam-i) < 0 ) {
-                return (void*) -1;
-            }
-        }
-        LOG puts("Fim trabalho");
-    }
-    LOG puts("Fim thread");
-
-    return NULL;
+int medirTemp() {
+    return (rand() % 16) + 25;
 }
 
-void readVec( int *v, int tam ) {
-    for (int i = 0; i < tam; i++) {
-        scanf("%d", v+i);
+typedef struct {
+    int id;
+} arg_t;
+
+void* sensor(void *a) {
+    arg_t *args = (arg_t *) a;
+    int id = args->id;
+
+    int timestamp = 0;
+    while (1) {
+        int temperatura = medirTemp();
+
+        if ( temperatura > 30 ) {
+            lock_escrita(lock, id);
+
+            int index = pos % 60;
+
+            temperaturas[index].temperatura = temperatura;
+            temperaturas[index].id = id;
+            temperaturas[index].timestamp = timestamp;
+
+            DEBUG
+            printf("--- %d [%d:%d]: %d \n", pos, id, timestamp, temperatura);
+
+            pos += 1;
+
+            unlock_escrita(lock, id);
+
+            timestamp += 1;
+        }
+        sleep(1);
     }
 }
 
-int main(int argc, char **argv) {
-	int numThreads, tamVec;
-	int tamBuffer;
+void* atuador(void *a) {
+    arg_t *args = (arg_t *) a;
+    int id = args->id;
 
-	double tstart, tfinish, telapsed;
+    int somaTemperatura = 0;
+    int lastTimestamp = -1;
 
-	// Leitura de argumentos
-	if (argc < 2) {
-		printf("usage: %s <n threads>\n", argv[0]);
-        return 0;
-	} else {
-		numThreads = atoll(argv[1]);
-	}
-    scanf("%d", &tamVec);
+    int temps[15];
 
-    tamBuffer = tamVec;
+    while (1) {
+        int newTimestamp = lastTimestamp;
 
-    int vec[tamVec];
-    readVec(vec, tamVec);
+        lock_leitura(lock, id);
+        for ( int i = 0; i < 60; i += 1 ) {
+            if ( i >= pos )
+                break;
 
-	pthread_t *tids = malloc(sizeof(*tids)*numThreads);
-	Buffer_t *buffer = newBuffer(tamBuffer, numThreads);
+            temperatura_t temp = temperaturas[i];
+            if ( temp.id != id )
+                continue;
 
-    bufferWrite(buffer, vec, tamVec);
-
-    PRINT_ANTES {
-        for (int i = 0; i < tamVec; i++) {
-            printf("%d ", vec[i]);
+            int stamp = temp.timestamp;
+            if ( stamp > lastTimestamp ) {
+                somaTemperatura += temp.temperatura;
+                temps[stamp % 15] = temp.temperatura;
+                
+                newTimestamp = stamp > newTimestamp ? stamp : newTimestamp;
+            }
         }
-        puts("");
-    }
+        unlock_leitura(lock, id);
 
-	GET_TIME(tstart);
+        // Analizar as últimas 15 temps
+        int vermelho = 5;
+        int amarelo = 5;
+        for ( int i = 0; i < 15; i += 1 ) {
+            int perigo = temps[i] > 35;
+
+            if ( i > newTimestamp ) {
+                break;
+            }
+
+            int inicio = (newTimestamp - 5) % 15;
+            int fim = newTimestamp % 15;
+            // subtrair do vermelho
+            if (  ( inicio < fim && ( inicio < i && i <= fim ) ) ||
+                  ( fim < inicio && ( inicio < i || i <= fim ) ) ) {
+                vermelho -= perigo;
+            }
+            amarelo -= perigo;
+        }
+
+        // Média
+        double media = ((double) somaTemperatura)
+                        / ((double) (newTimestamp + 1));
+
+        // Alertas
+        if ( vermelho <= 0 ) {
+            printf("-+-> %d: Alerta vermelho - Media(%d) = %lf\n",
+                    id, newTimestamp+1, media);
+        } else if ( amarelo <= 0 ) {
+            printf("-+-> %d: Alerta amarelo - Media(%d) = %lf\n",
+                    id, newTimestamp+1, media);
+        } else {
+            printf("-+-> %d: Condicao normal - Media(%d) = %lf\n",
+                    id, newTimestamp+1, media);
+        }
+
+        DEBUG {
+            printf(" L-> ");
+            for ( int i = 0; i < 15; i += 1 ) {
+                printf("%d ", temps[i]);
+            }
+            putchar(10);
+        }
+
+        lastTimestamp = newTimestamp;
+        sleep(2);
+    }
+}
+
+int main() {
+    // Inicializar um monte de coisa
+    pthread_t tsen[NTHREADS];
+    pthread_t tatu[NTHREADS];
+
+    arg_t args[NTHREADS];
+
+    lock = new_lock();
+
+    // while (1) printf("%d\n", medirTemp());
+
+    // Chamar as threads
+    for ( int i = 0; i < NTHREADS; i += 1 ) {
+        args[i].id = i;
+
+        if ( pthread_create(&tsen[i], NULL, sensor, &args[i]) ) {
+            fprintf(stderr, "Erro pthread-create sensor: i = %d\n", i);
+        }
+        if ( pthread_create(&tatu[i], NULL, atuador, &args[i]) ) {
+            fprintf(stderr, "Erro pthread-create atuador: i = %d\n", i);
+        }
+    }
     
-	// Chamar pthreads
-	for (int i = 0; i < numThreads; i++) {
-
-		if (pthread_create(tids + i, NULL, task, (void *) buffer)) {
-			printf("--ERRO: pthread_create()\n"); exit(-1);
-		}
-	}
-
-	// Espera pthreads
-	for (int i = 0; i < numThreads; i++) {
-        void *err;
-		if (pthread_join(tids[i], &err)) {
-			printf("--ERRO: pthread_join() \n"); exit(-1);
-		}
-        if ( err == (void*) -1 ) {
-            printf("Erro: Buffer muito pequeno\n");
-        }
-	}
-
-	GET_TIME(tfinish);
-	telapsed = tfinish - tstart;
-
-    PRINT_DEPOIS {
-        for (int i = 0; i < tamVec; i++) {
-            printf("%d ", vec[i]);
-        }
-        puts("");
-    }
-
-	printf("time elapsed:\t %lf \n", telapsed);
+    while (1) ;
 
     return 0;
 }
