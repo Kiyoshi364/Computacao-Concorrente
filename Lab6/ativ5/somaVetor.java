@@ -1,55 +1,19 @@
-class Arr {
-	int[] arr;
-
-	public Arr(int[] arr) {
-		this.arr = arr;
-	}
-
-	public boolean set(int index, int val) {
-		if ( index >= this.arr.length ) return false;
-		this.arr[index] = val;
-		return true;
-	}
-
-	public int get(int index) {
-		return this.arr[index];
-	}
-
-	public int size() {
-		return this.arr.length;
-	}
-
-	public void print() {
-		System.out.print("Array:");
-		for ( int val : this.arr ) {
-			System.out.print(" " + val);
-		}
-		System.out.println();
-	}
-}
-
 class Adder implements Runnable {
 
-	private Arr A;
-	private Arr B;
-	private Arr C;
+	private int[] vetor;
 
 	private int start;
 	private int end;
 
-	public Adder(Arr A, Arr B, Arr C, int start, int end) {
-		this.A = A;
-		this.B = B;
-		this.C = C;
+	public Adder(int[] vetor, int start, int end) {
+		this.vetor = vetor;
 		this.start = start;
 		this.end = end;
 	}
 
 	public void run() {
 		for (int i = start; i < end; i++) {
-			if ( !this.C.set(i, this.A.get(i) + this.B.get(i)) ) {
-				System.out.println("Error on adding index " + i);
-			}
+            this.vetor[i] += 1;
 		}
 	}
 }
@@ -61,31 +25,18 @@ class somaVetor {
 	public static void main(String args[]) {
 		Thread[] threads = new Thread[N];
 		
-		int[] a = new int[ARR_LEN];
-		for (int i = 0; i < a.length; i++) {
-			a[i] = i;
+        // Inicializa o vetor
+		int[] vetor = new int[ARR_LEN];
+		for (int i = 0; i < vetor.length; i++) {
+			vetor[i] = i;
 		}
-		
-		int[] b = new int[ARR_LEN];
-		for (int i = 0; i < b.length; i++) {
-			b[i] = ARR_LEN - i;
-		}
-		
-		int[] c = new int[ARR_LEN];
-		for (int i = 0; i < c.length; i++) {
-			c[i] = 0;
-		}
-		
-		Arr A = new Arr(a);
-		Arr B = new Arr(b);
-		Arr C = new Arr(c);
 		
 		int offset = 0;
-		int len = ARR_LEN / N;
-		int resto = ARR_LEN % N;
+		int len = vetor.length / N;
+		int resto = vetor.length % N;
 
-		//cria as threads da aplicacao
-		for (int i=0; i<threads.length; i++) {
+		// Cria as threads da aplicacao
+		for (int i = 0; i < threads.length; i++) {
 			int start = offset;
 			int end = start + len;
 
@@ -96,19 +47,33 @@ class somaVetor {
 				resto -= 1;
 			}
 
-			threads[i] = new Thread(new Adder(A, B, C, start, end));
+			threads[i] = new Thread(new Adder(vetor, start, end));
 		}
 
-		//inicia as threads
-		for (int i=0; i<threads.length; i++) {
+		// Inicia as threads
+		for (int i = 0; i < threads.length; i++) {
 			threads[i].start();
 		}
 
-		//espera pelo termino de todas as threads
-		for (int i=0; i<threads.length; i++) {
-			try { threads[i].join(); } catch (InterruptedException e) { return; }
+		// Espera pelo termino de todas as threads
+		for (int i = 0; i < threads.length; i++) {
+			try { threads[i].join(); }
+            catch (InterruptedException e) { return; }
 		}
 
-		C.print();
+        // Checar se está certo
+        int errs = 0;
+        for (int i = 0; i < vetor.length; i++) {
+            if ( vetor[i] != i+1 ) {
+                errs += 1;
+                System.out.printf("vetor[%d] = %d; esperado = %d", 
+                        i, vetor[i], i+1);
+            }
+        }
+        if ( errs > 0 ) {
+            System.out.println("Total de erros: " + errs);
+        } else {
+            System.out.println("Tudo ok!");
+        }
 	}
 }
