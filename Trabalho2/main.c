@@ -5,6 +5,8 @@
 
 #include "lock.h"
 
+#define INT_GRANDE 35791394
+
 #define NTHREADS   5
 
 #define DEBUG       if (1)
@@ -47,6 +49,15 @@ void* sensor(void *a) {
             DEBUG
             printf("--- %d [%d:%d]: %d \n", pos, id, timestamp, temperatura);
 
+            // Isso eh para incrementar e evitar overflow
+            // quando o pos fica maior que um numero grandao multiplo de 60
+            // a gente "reseta" o pos para 61
+            // nota: nao pode ser 1 porque pos > 60 fala que o buffer inteiro
+            // eh valido
+            //
+            // pos += 1 - (pos > 60*INT_GRANDE) * (INT_GRANDE - 1) * 60;
+            //
+            // nota: int é tão grande que talvez isso não valha a pena
             pos += 1;
 
             unlock_escrita(lock, id);
