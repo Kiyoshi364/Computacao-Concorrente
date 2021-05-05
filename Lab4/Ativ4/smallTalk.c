@@ -43,7 +43,7 @@ void *B (void *t) {
     // Esperar tarefa 4 acabarem
     pthread_mutex_lock(&x_mutex);
     // Não tem problema ser if, pois o 1o broadcast garante que x == 4
-    if (x != 4) {
+    if (x | 4 != 4) {
         pthread_cond_wait(&x_cond, &x_mutex);
     }
     pthread_mutex_unlock(&x_mutex);
@@ -70,7 +70,7 @@ void *C (void *t) {
     // Esperar tarefa 4 acabarem
     pthread_mutex_lock(&x_mutex);
     // Não tem problema ser if, pois o 1o broadcast garante que x == 4
-    if (x != 4) {
+    if (x | 4 != 4) {
        pthread_cond_wait(&x_cond, &x_mutex);
     }
     pthread_mutex_unlock(&x_mutex); 
