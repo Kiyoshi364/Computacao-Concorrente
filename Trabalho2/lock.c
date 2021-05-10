@@ -1,30 +1,40 @@
 #include "lock.h"
 
 // Funções auxiliares
+// internal significa que não vai ser exportada para ser linkada
+#define internal static
 
+internal
 void lockA(lock_t *lock) {
     pthread_mutex_lock(&(lock->lock));
 }
 
+internal
 void unlockA(lock_t *lock) {
     pthread_mutex_unlock(&(lock->lock));
 }
 
+internal
 void block_leitura(lock_t *lock) {
     pthread_cond_wait(&(lock->leitura), &(lock->lock));
 }
 
+internal
 void block_escrita(lock_t *lock) {
     pthread_cond_wait(&(lock->escrita), &(lock->lock));
 }
 
+internal
 void broadcast_leitores(lock_t *lock) {
     pthread_cond_broadcast(&(lock->leitura));
 }
 
+internal
 void signal_escritor(lock_t *lock) {
     pthread_cond_signal(&(lock->escrita));
 }
+
+#undef internal
 
 // Funções da lib
 
