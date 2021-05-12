@@ -7,8 +7,6 @@
 
 #define INT_GRANDE 35791394
 
-#define NTHREADS   5
-
 #define DEBUG       if (1)
 
 typedef struct {
@@ -93,7 +91,7 @@ void* atuador(void *a) {
             if ( stamp > lastTimestamp ) {
                 somaTemperatura += temp.temperatura;
                 temps[stamp % 15] = temp.temperatura;
-                
+
                 newTimestamp = stamp > newTimestamp ? stamp : newTimestamp;
             }
         }
@@ -148,19 +146,43 @@ void* atuador(void *a) {
     }
 }
 
-int main() {
+int main(int argc, char **argv) {
+    if ( argc < 2 ) {
+        printf("usage: %s <nthreads>\n", argv[0]);
+        return 0;
+    }
+
+    int nthreads = atol(argv[1]);
+
     // Inicializar um monte de coisa
-    pthread_t tsen[NTHREADS];
-    pthread_t tatu[NTHREADS];
+    pthread_t *tsen;
+    pthread_t *tatu;
+    arg_t *args;
 
-    arg_t args[NTHREADS];
+    tsen = malloc(sizeof(*tsen)*nthreads);
+    if ( !tsen ) {
+        fprintf(stderr, "Erro malloc: tsen\n");
+        return 1;
+    }
 
-    lock = new_lock();
+    tatu = malloc(sizeof(*tatu)*nthreads);
+    if ( !tatu ) {
+        fprintf(stderr, "Erro malloc: tatu\n");
+        return 1;
+    }
 
-    // while (1) printf("%d\n", medirTemp());
+    args = malloc(sizeof(*args)*nthreads);
+    if ( !args ) {
+        fprintf(stderr, "Erro malloc: args\n");
+        return 1;
+    }
+
+    lock_t LOCK;
+    init_lock(&LOCK);
+    lock = &LOCK;
 
     // Chamar as threads
-    for ( int i = 0; i < NTHREADS; i += 1 ) {
+    for ( int i = 0; i < nthreads; i += 1 ) {
         args[i].id = i;
 
         if ( pthread_create(&tsen[i], NULL, sensor, &args[i]) ) {

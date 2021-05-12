@@ -38,13 +38,7 @@ void signal_escritor(lock_t *lock) {
 
 // Funções da lib
 
-lock_t* new_lock() {
-    lock_t *lock = malloc(sizeof(*lock));
-    if ( !lock ) {
-        fprintf(stderr, "erro: new_lock malloc\n");
-        exit(1);
-    }
-
+void init_lock(lock_t *lock) {
     lock->leit_usando = 0;
     lock->escr_usando = 0;
 
@@ -54,8 +48,6 @@ lock_t* new_lock() {
     pthread_mutex_init(&(lock->lock), NULL);
     pthread_cond_init(&(lock->leitura), NULL);
     pthread_cond_init(&(lock->escrita), NULL);
-
-    return lock;
 }
 
 void lock_leitura(lock_t *lock, int id) {
