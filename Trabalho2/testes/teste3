@@ -1,0 +1,182 @@
+escr 0: quer escrever
+escr 0: esta escrevendo
+leit 0: quer ler
+leit 0: bloqueado
+escr 1: quer escrever
+escr 1: bloqueado
+leit 1: quer ler
+leit 1: bloqueado
+escr 2: quer escrever
+escr 2: bloqueado
+leit 2: quer ler
+leit 2: bloqueado
+escr 3: quer escrever
+escr 3: bloqueado
+leit 3: quer ler
+leit 3: bloqueado
+escr 4: quer escrever
+escr 4: bloqueado
+leit 4: quer ler
+leit 4: bloqueado
+escr 5: quer escrever
+escr 5: bloqueado
+leit 5: quer ler
+leit 5: bloqueado
+escr 6: quer escrever
+escr 6: bloqueado
+leit 6: quer ler
+leit 6: bloqueado
+escr 7: quer escrever
+escr 7: bloqueado
+leit 7: quer ler
+leit 7: bloqueado
+escr 8: quer escrever
+escr 8: bloqueado
+leit 8: quer ler
+leit 8: bloqueado
+escr 9: quer escrever
+escr 9: bloqueado
+leit 9: quer ler
+leit 9: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 3: desbloqueado
+escr 3: esta escrevendo
+escr 3: terminou de escrever
+escr 3: sinaliza escritor
+escr 4: desbloqueado
+escr 4: esta escrevendo
+escr 4: terminou de escrever
+escr 4: sinaliza escritor
+escr 5: desbloqueado
+escr 5: esta escrevendo
+escr 0: quer escrever
+escr 0: bloqueado
+escr 5: terminou de escrever
+escr 5: sinaliza escritor
+escr 6: desbloqueado
+escr 6: esta escrevendo
+escr 1: quer escrever
+escr 1: bloqueado
+escr 6: terminou de escrever
+escr 6: sinaliza escritor
+escr 7: desbloqueado
+escr 7: esta escrevendo
+escr 2: quer escrever
+escr 2: bloqueado
+escr 7: terminou de escrever
+escr 7: sinaliza escritor
+escr 8: desbloqueado
+escr 8: esta escrevendo
+escr 3: quer escrever
+escr 3: bloqueado
+escr 8: terminou de escrever
+escr 8: sinaliza escritor
+escr 9: desbloqueado
+escr 9: esta escrevendo
+escr 4: quer escrever
+escr 4: bloqueado
+escr 9: terminou de escrever
+escr 9: sinaliza escritor
+escr 0: desbloqueado
+escr 0: esta escrevendo
+escr 5: quer escrever
+escr 5: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+escr 6: quer escrever
+escr 6: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+escr 7: quer escrever
+escr 7: bloqueado
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 3: desbloqueado
+escr 3: esta escrevendo
+escr 8: quer escrever
+escr 8: bloqueado
+escr 3: terminou de escrever
+escr 3: sinaliza escritor
+escr 4: desbloqueado
+escr 4: esta escrevendo
+escr 9: quer escrever
+escr 9: bloqueado
+escr 4: terminou de escrever
+escr 4: sinaliza escritor
+escr 5: desbloqueado
+escr 5: esta escrevendo
+escr 0: quer escrever
+escr 0: bloqueado
+escr 5: terminou de escrever
+escr 5: sinaliza escritor
+escr 6: desbloqueado
+escr 6: esta escrevendo
+escr 1: quer escrever
+escr 1: bloqueado
+escr 6: terminou de escrever
+escr 6: sinaliza escritor
+escr 7: desbloqueado
+escr 7: esta escrevendo
+escr 2: quer escrever
+escr 2: bloqueado
+escr 7: terminou de escrever
+escr 7: sinaliza escritor
+escr 8: desbloqueado
+escr 8: esta escrevendo
+escr 3: quer escrever
+escr 3: bloqueado
+escr 8: terminou de escrever
+escr 8: sinaliza escritor
+escr 9: desbloqueado
+escr 9: esta escrevendo
+escr 4: quer escrever
+escr 4: bloqueado
+escr 9: terminou de escrever
+escr 9: sinaliza escritor
+escr 0: desbloqueado
+escr 0: esta escrevendo
+escr 5: quer escrever
+escr 5: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+escr 6: quer escrever
+escr 6: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+escr 7: quer escrever
+escr 7: bloqueado
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 3: desbloqueado
+escr 3: esta escrevendo
+escr 8: quer escrever
+escr 8: bloqueado
+escr 3: terminou de escrever
+escr 3: sinaliza escritor
+escr 4: desbloqueado
+escr 4: esta escrevendo
+escr 9: quer escrever
+escr 9: bloqueado
+escr 4: terminou de escrever
+escr 4: sinaliza escritor
+escr 5: desbloqueado
+escr 5: esta escrevendo
+escr 0: quer escrever
+escr 0: bloqueado

@@ -1,0 +1,116 @@
+escr 0: quer escrever
+escr 0: esta escrevendo
+leit 1: quer ler
+leit 1: bloqueado
+escr 2: quer escrever
+escr 2: bloqueado
+leit 2: quer ler
+leit 2: bloqueado
+escr 3: quer escrever
+escr 3: bloqueado
+leit 3: quer ler
+leit 3: bloqueado
+leit 0: quer ler
+leit 0: bloqueado
+escr 1: quer escrever
+escr 1: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 3: desbloqueado
+escr 3: esta escrevendo
+escr 3: terminou de escrever
+escr 3: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: desbloqueado
+leit 1: esta lendo
+leit 2: desbloqueado
+leit 2: esta lendo
+leit 3: desbloqueado
+leit 3: esta lendo
+leit 0: desbloqueado
+leit 0: esta lendo
+leit 2: terminou de ler
+leit 1: terminou de ler
+leit 3: terminou de ler
+leit 0: terminou de ler
+leit 0: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+escr 3: quer escrever
+escr 3: bloqueado
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 3: desbloqueado
+escr 3: esta escrevendo
+escr 1: quer escrever
+escr 1: bloqueado
+escr 3: terminou de escrever
+escr 3: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+leit 2: quer ler
+leit 2: bloqueado
+leit 3: quer ler
+leit 3: bloqueado
+leit 1: quer ler
+leit 1: bloqueado
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 2: desbloqueado
+leit 2: esta lendo
+leit 3: desbloqueado
+leit 3: esta lendo
+leit 1: desbloqueado
+leit 1: esta lendo
+leit 0: quer ler
+leit 0: esta lendo
+leit 1: terminou de ler
+leit 3: terminou de ler
+leit 0: terminou de ler
+leit 2: terminou de ler
+leit 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 3: quer escrever
+escr 3: esta escrevendo
+escr 1: quer escrever
+escr 1: bloqueado
+escr 3: terminou de escrever
+escr 3: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+leit 2: quer ler
+leit 2: bloqueado
+leit 3: quer ler
+leit 3: bloqueado
+leit 0: quer ler
+leit 0: bloqueado
+leit 1: quer ler
+leit 1: bloqueado
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 2: desbloqueado
+leit 2: esta lendo
+leit 0: desbloqueado
+leit 0: esta lendo
+leit 1: desbloqueado
+leit 1: esta lendo
+leit 3: desbloqueado
+leit 3: esta lendo

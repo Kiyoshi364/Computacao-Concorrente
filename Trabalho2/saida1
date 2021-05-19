@@ -1,0 +1,1487 @@
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 0 [0:0]: 32
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+escr 2: quer escrever
+escr 2: bloqueado
+leit 1: quer ler
+leit 1: bloqueado
+leit 2: quer ler
+leit 2: bloqueado
+leit 0: terminou de ler
+leit 0: sinaliza escritor
+-+-> 0: Condicao normal - Media(1) = 32.000000
+ L-> 32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 1 [2:0]: 34
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 2 [1:0]: 31
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+
+leit 1: desbloqueado
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Condicao normal - Media(1) = 31.000000
+ L-> 31 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+leit 2: desbloqueado
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(1) = 34.000000
+ L-> 34 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 3 [1:1]: 40
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 4 [1:2]: 35
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 5 [2:1]: 37
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 6 [0:1]: 34
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(2) = 35.500000
+ L-> 34 37 0 0 0 0 0 0 0 0 0 0 0 0 0
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Condicao normal - Media(3) = 35.333333
+ L-> 31 40 35 0 0 0 0 0 0 0 0 0 0 0 0
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Condicao normal - Media(2) = 33.000000
+ L-> 32 34 0 0 0 0 0 0 0 0 0 0 0 0 0
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 7 [1:3]: 38
+escr 2: quer escrever
+escr 2: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 8 [2:2]: 35
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 9 [0:2]: 36
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 10 [2:3]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Condicao normal - Media(4) = 36.000000
+ L-> 31 40 35 38 0 0 0 0 0 0 0 0 0 0 0
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Condicao normal - Media(3) = 34.000000
+ L-> 32 34 36 0 0 0 0 0 0 0 0 0 0 0 0
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(4) = 35.500000
+ L-> 34 37 35 36 0 0 0 0 0 0 0 0 0 0 0
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 11 [2:4]: 31
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 12 [0:3]: 37
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 13 [2:5]: 33
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(6) = 34.333333
+ L-> 34 37 35 36 31 33 0 0 0 0 0 0 0 0 0
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Condicao normal - Media(4) = 34.750000
+ L-> 32 34 36 37 0 0 0 0 0 0 0 0 0 0 0
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Condicao normal - Media(4) = 36.000000
+ L-> 31 40 35 38 0 0 0 0 0 0 0 0 0 0 0
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 14 [1:4]: 36
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 15 [2:6]: 33
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 16 [0:4]: 32
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 17 [1:5]: 38
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Condicao normal - Media(6) = 36.333333
+ L-> 31 40 35 38 36 38 0 0 0 0 0 0 0 0 0
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(7) = 34.142857
+ L-> 34 37 35 36 31 33 33 0 0 0 0 0 0 0 0
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 18 [2:7]: 31
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 19 [1:6]: 35
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 20 [0:5]: 39
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Condicao normal - Media(6) = 35.000000
+ L-> 32 34 36 37 32 39 0 0 0 0 0 0 0 0 0
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 21 [0:6]: 40
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(8) = 33.750000
+ L-> 34 37 35 36 31 33 33 31 0 0 0 0 0 0 0
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Condicao normal - Media(7) = 36.142857
+ L-> 31 40 35 38 36 38 35 0 0 0 0 0 0 0 0
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Condicao normal - Media(7) = 35.714286
+ L-> 32 34 36 37 32 39 40 0 0 0 0 0 0 0 0
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 22 [0:7]: 34
+escr 1: quer escrever
+escr 1: bloqueado
+escr 2: quer escrever
+escr 2: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+--- 23 [1:7]: 35
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 24 [2:8]: 31
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 25 [1:8]: 38
+escr 0: quer escrever
+escr 0: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 0: desbloqueado
+escr 0: esta escrevendo
+--- 26 [0:8]: 32
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Condicao normal - Media(9) = 35.111111
+ L-> 32 34 36 37 32 39 40 34 32 0 0 0 0 0 0
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(9) = 36.222222
+ L-> 31 40 35 38 36 38 35 35 38 0 0 0 0 0 0
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(9) = 33.444444
+ L-> 34 37 35 36 31 33 33 31 31 0 0 0 0 0 0
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 27 [0:9]: 33
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 28 [2:9]: 35
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 29 [0:10]: 38
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(9) = 36.222222
+ L-> 31 40 35 38 36 38 35 35 38 0 0 0 0 0 0
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(11) = 35.181818
+ L-> 32 34 36 37 32 39 40 34 32 33 38 0 0 0 0
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(10) = 33.600000
+ L-> 34 37 35 36 31 33 33 31 31 35 0 0 0 0 0
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 30 [1:9]: 32
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 31 [2:10]: 33
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 32 [2:11]: 34
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 33 [1:10]: 39
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(11) = 35.181818
+ L-> 32 34 36 37 32 39 40 34 32 33 38 0 0 0 0
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(11) = 36.090909
+ L-> 31 40 35 38 36 38 35 35 38 32 39 0 0 0 0
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(12) = 33.583333
+ L-> 34 37 35 36 31 33 33 31 31 35 33 34 0 0 0
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 34 [0:11]: 36
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 35 [1:11]: 38
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 36 [0:12]: 31
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 37 [2:12]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(12) = 36.250000
+ L-> 31 40 35 38 36 38 35 35 38 32 39 38 0 0 0
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(13) = 34.923077
+ L-> 32 34 36 37 32 39 40 34 32 33 38 36 31 0 0
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(13) = 33.769231
+ L-> 34 37 35 36 31 33 33 31 31 35 33 34 36 0 0
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 38 [1:12]: 39
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(13) = 36.461538
+ L-> 31 40 35 38 36 38 35 35 38 32 39 38 39 0 0
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(13) = 34.923077
+ L-> 32 34 36 37 32 39 40 34 32 33 38 36 31 0 0
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(13) = 33.769231
+ L-> 34 37 35 36 31 33 33 31 31 35 33 34 36 0 0
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 39 [2:13]: 38
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 40 [1:13]: 37
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 41 [0:13]: 32
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 42 [1:14]: 34
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(15) = 36.333333
+ L-> 31 40 35 38 36 38 35 35 38 32 39 38 39 37 34
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(14) = 34.714286
+ L-> 32 34 36 37 32 39 40 34 32 33 38 36 31 32 0
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Condicao normal - Media(14) = 34.071429
+ L-> 34 37 35 36 31 33 33 31 31 35 33 34 36 38 0
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 43 [0:14]: 39
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 44 [2:14]: 37
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 45 [1:15]: 32
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(15) = 35.000000
+ L-> 32 34 36 37 32 39 40 34 32 33 38 36 31 32 39
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(15) = 34.266667
+ L-> 34 37 35 36 31 33 33 31 31 35 33 34 36 38 37
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(16) = 36.062500
+ L-> 32 40 35 38 36 38 35 35 38 32 39 38 39 37 34
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 46 [0:15]: 39
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 47 [1:16]: 39
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 48 [2:15]: 32
+escr 0: quer escrever
+escr 0: bloqueado
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 0: desbloqueado
+escr 0: esta escrevendo
+--- 49 [0:16]: 35
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 50 [1:17]: 37
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(18) = 36.277778
+ L-> 32 39 37 38 36 38 35 35 38 32 39 38 39 37 34
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(17) = 35.235294
+ L-> 39 35 36 37 32 39 40 34 32 33 38 36 31 32 39
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(16) = 34.125000
+ L-> 32 37 35 36 31 33 33 31 31 35 33 34 36 38 37
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 51 [2:16]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 52 [1:18]: 40
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 53 [0:17]: 31
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 54 [2:17]: 33
+escr 0: quer escrever
+escr 0: bloqueado
+escr 1: quer escrever
+escr 1: bloqueado
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 0: desbloqueado
+escr 0: esta escrevendo
+--- 55 [0:18]: 37
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+--- 56 [1:19]: 35
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(20) = 36.400000
+ L-> 32 39 37 40 35 38 35 35 38 32 39 38 39 37 34
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(18) = 34.166667
+ L-> 32 36 33 36 31 33 33 31 31 35 33 34 36 38 37
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(19) = 35.105263
+ L-> 39 35 31 37 32 39 40 34 32 33 38 36 31 32 39
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 57 [1:20]: 37
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 58 [2:18]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 59 [2:19]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 60 [0:19]: 40
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(21) = 36.428571
+ L-> 32 39 37 40 35 37 35 35 38 32 39 38 39 37 34
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(20) = 35.350000
+ L-> 39 35 31 37 40 39 40 34 32 33 38 36 31 32 39
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(20) = 34.350000
+ L-> 32 36 33 36 36 33 33 31 31 35 33 34 36 38 37
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 61 [2:20]: 37
+escr 1: quer escrever
+escr 1: bloqueado
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+--- 62 [1:21]: 37
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 63 [0:20]: 33
+escr 2: quer escrever
+escr 2: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 64 [2:21]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 65 [1:22]: 37
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(23) = 36.478261
+ L-> 32 39 37 40 35 37 37 37 38 32 39 38 39 37 34
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(22) = 34.545455
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(21) = 35.238095
+ L-> 39 35 31 37 40 33 40 34 32 33 38 36 31 32 39
+ L-> 32 36 33 36 36 37 36 31 31 35 33 34 36 38 37
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 66 [0:21]: 35
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 67 [1:23]: 39
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 68 [2:22]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 69 [1:24]: 35
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(25) = 36.520000
+ L-> 32 39 37 40 35 37 37 37 39 35 39 38 39 37 34
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta vermelho - Media(23) = 34.608696
+ L-> 32 36 33 36 36 37 36 36 31 35 33 34 36 38 37
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(22) = 35.227273
+ L-> 39 35 31 37 40 33 35 34 32 33 38 36 31 32 39
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 70 [2:23]: 35
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 71 [0:22]: 35
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 72 [1:25]: 36
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 73 [0:23]: 34
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 74 [1:26]: 31
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(27) = 36.296296
+ L-> 32 39 37 40 35 37 37 37 39 35 36 31 39 37 34
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(24) = 35.166667
+ L-> 39 35 31 37 40 33 35 35 34 33 38 36 31 32 39
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(24) = 34.625000
+ L-> 32 36 33 36 36 37 36 36 35 35 33 34 36 38 37
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 75 [2:24]: 37
+escr 0: quer escrever
+escr 0: bloqueado
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 0: desbloqueado
+escr 0: esta escrevendo
+--- 76 [0:24]: 37
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 77 [2:25]: 33
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(27) = 36.296296
+ L-> 32 39 37 40 35 37 37 37 39 35 36 31 39 37 34
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(26) = 34.653846
+ L-> 32 36 33 36 36 37 36 36 35 37 33 34 36 38 37
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(25) = 35.240000
+ L-> 39 35 31 37 40 33 35 35 34 37 38 36 31 32 39
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 78 [2:26]: 39
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 79 [1:27]: 34
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 80 [1:28]: 34
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 81 [2:27]: 37
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 82 [0:25]: 36
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(29) = 36.137931
+ L-> 32 39 37 40 35 37 37 37 39 35 36 31 34 34 34
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(28) = 34.892857
+ L-> 32 36 33 36 36 37 36 36 35 37 33 39 37 38 37
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(26) = 35.269231
+ L-> 39 35 31 37 40 33 35 35 34 37 36 36 31 32 39
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 83 [0:26]: 33
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 84 [1:29]: 40
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 85 [2:28]: 34
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 86 [2:29]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(30) = 36.266667
+ L-> 32 39 37 40 35 37 37 37 39 35 36 31 34 34 40
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(27) = 35.185185
+ L-> 39 35 31 37 40 33 35 35 34 37 leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(30) = 34.900000
+ L-> 32 36 33 36 36 37 36 36 35 37 33 39 37 34 36
+36 33 31 32 39
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 87 [0:27]: 40
+escr 1: quer escrever
+escr 1: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+--- 88 [1:30]: 32
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(31) = 36.129032
+ L-> 32 39 37 40 35 37 37 37 39 35 36 31 34 34 40
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(28) = 35.357143
+ L-> 39 35 31 37 40 33 35 35 34 37 36 33 40 32 39
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(30) = 34.900000
+ L-> 32 36 33 36 36 37 36 36 35 37 33 39 37 34 36
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 89 [1:31]: 34
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 90 [2:30]: 35
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 91 [0:28]: 35
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 92 [2:31]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(32) = 36.062500
+ L-> 32 34 37 40 35 37 37 37 39 35 36 31 34 34 40
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(32) = 34.937500
+ L-> 35 36 33 36 36 37 36 36 35 37 33 39 37 34 36
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(29) = 35.344828
+ L-> 39 35 31 37 40 33 35 35 34 37 36 33 40 35 39
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 93 [0:29]: 36
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 94 [2:32]: 33
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 95 [1:32]: 32
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 96 [2:33]: 38
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(30) = 35.366667
+ L-> 39 35 31 37 40 33 35 35 34 37 36 33 40 35 36
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(34) = 34.970588
+ L-> 35 36 33 38 36 37 36 36 35 37 33 39 37 34 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(33) = 35.939394
+ L-> 32 34 32 40 35 37 37 37 39 35 36 31 34 34 40
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 97 [1:33]: 40
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 98 [2:34]: 39
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 99 [0:30]: 33
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 100 [1:34]: 37
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 101 [2:35]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(31) = 35.290323
+ L-> 33 35 31 37 40 33 35 35 34 37 36 33 40 35 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(35) = 36.085714
+ L-> 32 34 32 40 37 37 37 37 39 35 36 31 34 leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(36) = 35.111111
+34  L-> 35 36 33 38 39 36 36 36 35 37 33 39 37 34 36
+40
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 102 [2:36]: 35
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(31) = 35.290323
+ L-> 33 35 31 37 40 33 35 35 34 37 36 33 40 35 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(35) = 36.085714
+ L-> 32 34 32 40 37 37 37 37 39 35 36 31 34 34 40
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(37) = 35.108108
+ L-> 35 36 33 38 39 36 35 36 35 37 33 39 37 34 36
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 103 [2:37]: 39
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 104 [0:31]: 36
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 105 [1:35]: 34
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 106 [1:36]: 36
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(32) = 35.312500
+ L-> 33 36 31 37 40 33 35 35 34 37 36 33 40 35 36
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(38) = 35.210526
+ L-> 35 36 33 38 39 36 35 39 35 37 33 39 37 34 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(37) = 36.027027
+ L-> 32 34 32 40 37 34 36 37 39 35 36 31 34 34 40
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 107 [0:32]: 39
+escr 2: quer escrever
+escr 2: bloqueado
+escr 1: quer escrever
+escr 1: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 108 [2:38]: 34
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+--- 109 [1:37]: 37
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(33) = 35.424242
+ L-> 33 36 39 37 40 33 35 35 34 37 36 33 40 35 36
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(39) = 35.179487
+ L-> 35 36 33 38 39 36 35 39 34 37 33 39 37 34 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(38) = 36.052632
+ L-> 32 34 32 40 37 34 36 37 39 35 36 31 34 34 40
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 110 [1:38]: 35
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 111 [0:33]: 37
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 112 [1:39]: 36
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(34) = 35.470588
+ L-> 33 36 39 37 40 33 35 35 34 37 36 33 40 35 36
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(39) = 35.179487
+ L-> 35 36 33 38 39 36 35 39 34 37 33 39 37 34 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(40) = 36.025000
+ L-> 32 34 32 40 37 34 36 37 35 36 36 31 34 34 40
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 113 [1:40]: 40
+escr 2: quer escrever
+escr 2: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 114 [2:39]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 115 [2:40]: 38
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(34) = 35.470588
+ L-> 33 36 39 37 40 33 35 35 34 37 36 33 40 35 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(41) = 36.121951
+ L-> 32 34 32 40 37 34 36 37 35 36 40 31 34 34 40
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(41) = 35.268293
+ L-> 35 36 33 38 39 36 35 39 34 36 38 39 37 34 36
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 116 [2:41]: 33
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 117 [0:34]: 32
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 118 [0:35]: 37
+escr 1: quer escrever
+escr 1: bloqueado
+escr 0: terminou de escrever
+escr 0: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+--- 119 [1:41]: 40
+escr 2: quer escrever
+escr 2: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 120 [2:42]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(36) = 35.416667
+ L-> 33 36 39 37 32 37 35 35 34 37 36 33 40 35 36
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(43) = 35.232558
+ L-> 35 36 33 38 39 36 35 39 34 36 38 33 36 34 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(42) = 36.214286
+ L-> 32 34 32 40 37 34 36 37 35 36 40 40 34 34 40
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 121 [0:36]: 34
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 122 [2:43]: 35
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 123 [1:42]: 36
+escr 0: quer escrever
+escr 0: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 0: desbloqueado
+escr 0: esta escrevendo
+--- 124 [0:37]: 38
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(38) = 35.447368
+ L-> 33 36 39 37 32 37 34 38 34 37 36 33 40 35 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(43) = 36.209302
+ L-> 32 34 32 40 37 34 36 37 35 36 40 40 36 34 40
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(44) = 35.227273
+ L-> 35 36 33 38 39 36 35 39 34 36 38 33 36 35 36
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 125 [1:43]: 36
+escr 2: quer escrever
+escr 2: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 126 [2:44]: 35
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 127 [2:45]: 37
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 128 [1:44]: 40
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(38) = 35.447368
+ L-> 33 36 39 37 32 37 34 38 34 37 36 33 40 35 36
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(46) = 35.260870
+ L-> 37 36 33 38 39 36 35 39 34 36 38 33 36 35 35
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta vermelho - Media(45) = 36.288889
+ L-> 32 34 32 40 37 34 36 37 35 36 40 40 36 36 40
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 129 [2:46]: 33
+escr 1: quer escrever
+escr 1: bloqueado
+escr 0: quer escrever
+escr 0: bloqueado
+escr 2: terminou de escrever
+escr 2: sinaliza escritor
+escr 1: desbloqueado
+escr 1: esta escrevendo
+--- 130 [1:45]: 34
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 0: desbloqueado
+escr 0: esta escrevendo
+--- 131 [0:38]: 33
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 132 [1:46]: 36
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(39) = 35.384615
+ L-> 33 36 39 37 32 37 34 38 33 37 36 33 40 35 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(47) = 36.234043
+ L-> 34 36 32 40 37 34 36 37 35 36 40 40 36 36 40
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(47) = 35.212766
+ L-> 37 33 33 38 39 36 35 39 34 36 38 33 36 35 35
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 133 [1:47]: 35
+escr 2: quer escrever
+escr 2: bloqueado
+escr 1: terminou de escrever
+escr 1: sinaliza escritor
+escr 2: desbloqueado
+escr 2: esta escrevendo
+--- 134 [2:47]: 39
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 135 [0:39]: 33
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 136 [1:48]: 33
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(40) = 35.325000
+ L-> 33 36 39 37 32 37 34 38 33 33 36 33 40 35 36
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(49) = 36.142857
+ L-> 34 36 35 33 37 34 36 37 35 36 40 40 36 36 40
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(48) = 35.291667
+ L-> 37 33 39 38 39 36 35 39 34 36 38 33 36 35 35
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 137 [0:40]: 33
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 138 [1:49]: 34
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 139 [1:50]: 38
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 140 [2:48]: 38
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(49) = 35.346939
+ L-> 37 33 39 38 39 36 35 39 34 36 38 33 36 35 35
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(51) = 36.137255
+ L-> 34 36 35 33 34 38 36 37 35 36 40 40 36 36 40
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(41) = 35.268293
+ L-> 33 36 39 37 32 37 34 38 33 33 33 33 40 35 36
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 141 [2:49]: 37
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 142 [0:41]: 40
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 143 [1:51]: 39
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 144 [2:50]: 32
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 145 [1:52]: 35
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 146 [0:42]: 36
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+leit 1: quer ler
+leit 1: esta lendo
+leit 1: terminou de ler
+leit 1: broadcast leitores
+-+-> 1: Alerta amarelo - Media(53) = 36.169811
+ L-> 34 36 35 33 34 38 39 35 35 36 40 40 36 36 40
+leit 0: quer ler
+leit 0: esta lendo
+leit 0: terminou de ler
+leit 0: broadcast leitores
+-+-> 0: Alerta amarelo - Media(43) = 35.395349
+ L-> 33 36 39 37 32 37 34 38 33 33 33 40 36 35 36
+leit 2: quer ler
+leit 2: esta lendo
+leit 2: terminou de ler
+leit 2: broadcast leitores
+-+-> 2: Alerta amarelo - Media(51) = 35.313725
+ L-> 37 33 39 38 37 32 35 39 34 36 38 33 36 35 35
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 147 [2:51]: 37
+escr 2: terminou de escrever
+escr 2: broadcast leitores
+escr 1: quer escrever
+escr 1: esta escrevendo
+--- 148 [1:53]: 37
+escr 1: terminou de escrever
+escr 1: broadcast leitores
+escr 0: quer escrever
+escr 0: esta escrevendo
+--- 149 [0:43]: 31
+escr 0: terminou de escrever
+escr 0: broadcast leitores
+escr 2: quer escrever
+escr 2: esta escrevendo
+--- 150 [2:52]: 36
+escr 2: terminou de escrever
+escr 2: broadcast leitores
